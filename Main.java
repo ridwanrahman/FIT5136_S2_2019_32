@@ -14,10 +14,12 @@ public class Main
         System.out.println("I hope this thing goes to anywhere");
         runProgram();
     }
+    
     public void runProgram()
     {
         showMenu();
     }
+    
     public void showMenu()
     {
         int choice = 0;
@@ -70,12 +72,13 @@ public class Main
         System.out.println("1. I'd like to see all the halls");
         System.out.println("2. I'd like to login to my account");
         System.out.println("3. I'd like to register");
-        System.out.println("Enter the number for your choice: ");
-        choice = takeIntInput();
-        System.out.println(choice);
-        switch(choice) {
+        System.out.println("4. Exit");
+        boolean choiceLoop = false;
+        while(choiceLoop == false) {
+            choice = takeIntInput();
+            switch(choice) {
             case 1:
-                System.out.println("Taking you to see all halls");
+                hallView();                
                 break;
             case 2:
                 System.out.println("Taking you to the login page");
@@ -83,23 +86,51 @@ public class Main
             case 3:
                 System.out.println("Taking you to the registration page");
                 break;
+            case 4:
+                exit();
+                choiceLoop = true;
+                break;
             default:
                 System.out.println("Wrong choice!!!");
                 showMenu();
+            }
         }
-        
     }
+    
     public int takeIntInput() {
         Scanner input = new Scanner(System.in);
         while (true) {
-        System.out.println("Insert amount:");
-        try {
-            return input.nextInt();
-        }
-        catch (java.util.InputMismatchException e) {
-            input.nextLine();
-        }
+            System.out.print("Enter the number for your choice: ");
+            try {
+                return input.nextInt();
+            }
+            catch (java.util.InputMismatchException e) {
+                input.nextLine();
+            }
+        }        
     }
-        
+    
+    public void exit() {
+        System.out.println("Thank you for using Prime Events. Have a great day!");
+        System.exit(1); 
+    }
+    
+    public void hallView()
+    {
+        System.out.print('\u000C');
+        System.out.println("Taking you to see all halls");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("4: Go back");
+        boolean hallViewMenuLoop = false;
+        while(hallViewMenuLoop == false) {
+            int choice = takeIntInput();
+            switch(choice) {
+                case 4:
+                    hallViewMenuLoop = true;
+                    break;                                                    
+            }
+        }
+        showMenu();                
     }
 }
