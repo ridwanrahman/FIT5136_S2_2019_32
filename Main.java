@@ -24,7 +24,7 @@ public class Main
     {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.print('\u000C');
+        System.out.print('\u000C'); //To clear out the screen
         System.out.println("************************** WELCOME TO PRIME EVENTS *********************");        
         System.out.print(" *");
         System.out.print(" \t\t\t\t\t\t\t\t\t*");
