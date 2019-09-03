@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Vlidation
+comment0.text=\n\ Write\ a\ description\ of\ class\ Vlidation\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=userInput
+comment1.target=boolean\ isVaild(java.lang.String)
+comment2.params=minimum\ maximum\ userInput
+comment2.target=boolean\ isOutOfBound(int,\ int,\ int)
+numComments=3
